@@ -1,0 +1,23 @@
+alarm add "Wakeup" 07:00
+alarm add "Wakeup" 11:40 --notes "hello World"
+alarm add "Stand-up" 09:30 --schedule daily --priority high --tags work,scrum
+alarm add "Meeting" 9:50 --schedule one_time --date 2026-06-26 --notes "Quarterly review"
+alarm add "Hydrate" 09:00 --schedule interval --interval 30 --tags health
+alarm add "Gym" 06:30 --schedule weekdays --days Mon,Wed,Fri --disabled
+
+alarm list
+alarm list --filter active
+alarm list --filter disabled
+alarm list --filter tag:work
+
+alarm edit --id 6e27 --time 07:00 --name "Gym Session"
+alarm edit --id abc123 --priority high --snooze 10
+
+alarm delete --id abc123
+alarm delete --id abc123 --yes
+
+alarm toggle --id abc123
+alarm toggle --id abc123 --enable
+alarm toggle --id abc123 --disable
+
+alarm snooze --id abc123 --minutes 10
